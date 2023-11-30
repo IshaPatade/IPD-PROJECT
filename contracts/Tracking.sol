@@ -66,7 +66,7 @@ contract Tracking {
     function createShipment(address _receiver, uint256 _pickupTime, uint256 _distance, uint256 _price)public payable{
         require(msg.value == _price, "Payment amount must match the price");
 
-        Shipment memory shipment = Shipment(msg.sender, _receiver, _pickupTime, 0, _distance, _price, ShipemntStatus.PENDING, false);
+        Shipment memory shipment = Shipment(msg.sender, _receiver, _pickupTime, 0, _distance, _price, ShipmentStatus.PENDING, false);
          
          shipments[msg.sender].push(shipment);
          shipmentCount++;
@@ -96,7 +96,7 @@ contract Tracking {
         require(shipment.status == ShipmentStatus.PENDING, "Shipment already in transit.");
 
         shipment.status =ShipmentStatus.IN_TRANSIT;
-        typeShipemnt.status = ShipmentStatus.IN_TRANSIT;
+        typeShipment.status = ShipmentStatus.IN_TRANSIT;
 
         emit ShipmentInTransit(_sender, _receiver, shipment.pickupTime);
 
@@ -107,13 +107,13 @@ contract Tracking {
         Typeshipment storage typeShipment = typeShipments[_index];
 
         require(shipment.receiver == _receiver, 'Invalid receiver');
-        require(shipment.status == ShipemntStatus.IN_TRANSIT, 'Shipment not in transit.');
+        require(shipment.status == ShipmentStatus.IN_TRANSIT, 'Shipment not in transit.');
         require(!shipment.isPaid, "Shipment already paid.");
 
         shipment.status = ShipmentStatus.DELIVERED;
         typeShipment.status = ShipmentStatus.DELIVERED;
         typeShipment.deliveryTime = block.timestamp;
-        shipemnt.deliveryTime = block.timestamp;
+        shipment.deliveryTime = block.timestamp;
 
         uint256 amount = shipment.price;
 
@@ -127,5 +127,19 @@ contract Tracking {
  
     }
 
-    
+    function getShipment(address _sender, uint256 _index )public view returns(address, address, uint256,uint256,uint256,uint256,ShipmentStatus, bool){
+        Shipment memory shipment = shipments[_sender][_index];
+        return (shipment.sender,shipment.receiver, shipment.pickupTime, shipment.deliveryTime, shipment.distance, shipment.price, shipment.status, shipment.isPaid);
+
+    }
+
+    function getShipmentsCount(address _sender) public view returns   (uint256) {
+        return shipments[_sender].length;
+    }
+
+    function getAllTransactions() public view returns (TypeShipemnt[] memory){
+        return typeShipments;
+    }
+
+
 }
