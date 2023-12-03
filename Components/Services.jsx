@@ -8,14 +8,14 @@ import React from "react";
 
 // export default Services
 
-// import images from "..?Images/index.js";
-// import Images from " next'images";
+import images from "../Images/index.js";
+import Image from "next/image";
 import { MODAL_CARD_CLASSNAME } from "web3modal";
 
 export default ({
   setOpenProfile,
   setCompleteModal,
-  setGetModel,
+  setGetModal,
   setStartModal,
 }) => {
   const team = [

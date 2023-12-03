@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import image from "next/image";
 
 //INTERNAL IMPORT
-<<<<<<< HEAD
 // import images from "../Images/index";
-=======
-// import images from "../Images/index"
->>>>>>> dffa26359ca46c272b6d7b49df4bc6c3722a1fa6
 
 export default ({
   openProfile,
   setOpenProfile,
   currentUser,
-<<<<<<< HEAD
   getShipmentCount,
 }) => {
   const [count, setCount] = useState();
@@ -23,17 +18,6 @@ export default ({
       setCount(allData);
     };
   }, []);
-=======
-  getShipmentCount
-})=>{
-  const [count,setCount]=useState();
- useEffect(() => {
-  const getShipmentsData = getShipmentCount();
-  return async()=>{
-    const allData = await getShipmentsData;
-    setCount(allData);
- };}, []);
->>>>>>> dffa26359ca46c272b6d7b49df4bc6c3722a1fa6
 
   return openProfile ? (
     <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -51,7 +35,6 @@ export default ({
               <Str1></Str1>
             </button>
           </div>
-<<<<<<< HEAD
           <div className="max-w-sm mx-auto py-3 space-y-3 text-center">
             <div className="flex flex-col items-center pb-10">
               <Image
@@ -78,19 +61,6 @@ export default ({
                 >
                   Total Shipment : {count}
                 </a>
-=======
-          <div className='max-w-sm mx-auto py-3 space-y-3 text-center'>
-            <div className='flex flex-col items-center pb-10'>
-              <Image className=" w-24 h-24 mb-3 rounded-full shadow-lg" src={image} alt="image"/>
-              <h5 className='mb-1 text-xl font-medium text-gray-900 dark:text-white'>welcome Trader</h5>
-              <span className='text-sm text-gray-500 dark:text-gray-400'>{currentUser}</span>
-              <div className='flex mt-4 space-x-3 md:mt-6'>
-                <a href="#"
-                className='inline-flex items-centerpx-4 py-2 text-sm font-medium text-center text-black rounded-lg border-2'>Balance : something</a>
-                <a href="#"
-                 className='inline-flex items-centerpx-4 py-2 text-sm font-medium text-center text-black rounded-lg border-2'>Total Shipment : {count}</a>
-                
->>>>>>> dffa26359ca46c272b6d7b49df4bc6c3722a1fa6
               </div>
             </div>
           </div>
