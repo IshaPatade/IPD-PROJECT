@@ -1,3 +1,4 @@
+// "use client";
 import React, { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
@@ -74,18 +75,18 @@ export const TrackingProvider = ({ children }) => {
       });
       const provider = new ethers.providers.JsonRpcProvider();
       const contract = fetchContract(provider);
-      const shipmentsCount= await contract.getShipmentCount(accounts[0]);
+      const shipmentsCount = await contract.getShipmentCount(accounts[0]);
       return shipmentsCount.toNumber();
     } catch (error) {
       console.log("error want, getting shipment");
     }
   };
-  const completeShipment = async(completeShip) => {
+  const completeShipment = async (completeShip) => {
     console.log(completeShip);
 
     const { receiver, index } = completeShip;
-    try{
-      if(!window.ethereum) return "Install MetaMask";
+    try {
+      if (!window.ethereum) return "Install MetaMask";
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
@@ -106,15 +107,15 @@ export const TrackingProvider = ({ children }) => {
       );
       transaction.wait();
       console.log(transaction);
-    } catch(error){
-      console.log('wrong completeShipment', error);
+    } catch (error) {
+      console.log("wrong completeShipment", error);
     }
   };
 
   const getShipment = async (index) => {
     console.log(index * 1);
-    try{
-      if(!window.ethereum) return "Install MetaMask";
+    try {
+      if (!window.ethereum) return "Install MetaMask";
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
@@ -125,27 +126,27 @@ export const TrackingProvider = ({ children }) => {
       const shipment = await contract.getShipment(accounts[0], index * 1);
 
       const SingleShipment = {
-        sender:shipment[0],
+        sender: shipment[0],
         receiver: shipment[1],
-        pickupTime:shipment[2].toNumber(),
-        deliveryTime:shipment[3].toNumber(),
-        distance:shipment[4].toNumber(),
+        pickupTime: shipment[2].toNumber(),
+        deliveryTime: shipment[3].toNumber(),
+        distance: shipment[4].toNumber(),
         price: ethers.utils.formatEther(shipment[5].toString()),
-        status:shipment[6],
+        status: shipment[6],
         isPaid: shipment[7],
       };
 
       return SingleShipment;
-    }catch(error) {
+    } catch (error) {
       console.log("Sorry no chipment");
     }
   };
 
   const startShipment = async (getProduct) => {
-    const{ receiver , index } = getProduct;
+    const { receiver, index } = getProduct;
 
-    try{
-      if(!window.ethereum) return "Install Metamask";
+    try {
+      if (!window.ethereum) return "Install Metamask";
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
@@ -158,29 +159,29 @@ export const TrackingProvider = ({ children }) => {
       const shipment = await contract.startShipment(
         accounts[0],
         receiver,
-        index*1
+        index * 1
       );
       shipment.wait();
       console.log(shipment);
-    }catch(error) {
-      console.log("Sorry no shipment",error);
+    } catch (error) {
+      console.log("Sorry no shipment", error);
     }
   };
   //--CHECK WALLET CONNECTED
   const checkIfWalletConnected = async () => {
-    try{
-      if(!window.ethereum) return "Install MetaMask";
+    try {
+      if (!window.ethereum) return "Install MetaMask";
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
 
-      if(accounts.length){
+      if (accounts.length) {
         setCurrentUser(accounts[0]);
-      }else{
+      } else {
         return "No account";
       }
-    }catch(error){
+    } catch (error) {
       return "not connected";
     }
   };
@@ -188,17 +189,16 @@ export const TrackingProvider = ({ children }) => {
   //---CONNECT WALLET FUNCTION
 
   const connectWallet = async () => {
-    try{
-      if(!window.ethereum) return "Install MetaMask";
+    try {
+      if (!window.ethereum) return "Install MetaMask";
 
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
-
       });
 
       setCurrentUser(accounts[0]);
-    }catch(error){
-      return "Something went wrong"
+    } catch (error) {
+      return "Something went wrong";
     }
   };
 
@@ -206,23 +206,21 @@ export const TrackingProvider = ({ children }) => {
     checkIfWalletConnected();
   }, []);
 
-  return(
-    <TrackingContext.Provider 
-    value={{
-      connectWallet,
-      createShipment,
-      getAllShipment,
-      completeShipment,
-      getShipment,
-      startShipment,
-      getShipmentCount,
-      DappName,
-      currentUser,
-    }}
-   >
-   {children}
-   </TrackingContext.Provider>
+  return (
+    <TrackingContext.Provider
+      value={{
+        connectWallet,
+        createShipment,
+        getAllShipment,
+        completeShipment,
+        getShipment,
+        startShipment,
+        getShipmentCount,
+        DappName,
+        currentUser,
+      }}
+    >
+      {children}
+    </TrackingContext.Provider>
   );
-    
-
-}
+};

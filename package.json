@@ -14,12 +14,10 @@
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
-<<<<<<< HEAD
+
     "web3modal": "^1.9.12",
-    "@nomicfoundation/hardhat-toolbox": "^1.0.0"
-=======
+    "@nomicfoundation/hardhat-toolbox": "^1.0.0",
     "web3modal": "^1.9.12"
->>>>>>> d7db41fccb048bfeb56f0a767e5e277c0b50a190
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

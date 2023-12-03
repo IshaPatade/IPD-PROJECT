@@ -1,14 +1,17 @@
+// "use client";
 import "./app/globals.css";
 
-//INTERMAL import 
+//INTERMAL import
 import { TrackingProvider } from "../Context/Tracking";
-
-export default function App({Component, pageProps}){
-    return (
-        <>
-            <TrackingProvider>
-                <Component {...pageProps}/>
-            </TrackingProvider>
-        </>
-    );
+import { NavBar, Footer } from "../Components";
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <TrackingProvider>
+        <NavBar />
+        <Component {...pageProps} />
+      </TrackingProvider>
+      <Footer />
+    </>
+  );
 }
