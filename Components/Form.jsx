@@ -112,7 +112,7 @@ export default ({
 
               <button
                 onClick={() => createItem()}
-                className="bloack w-full mt-3 py-3 px-4 font-medium text-sm text-centre text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg ring-offset-2 ring-indigo-600 focus:ring-2"
+                className="block w-full mt-3 py-3 px-4 font-medium text-sm text-centre text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg ring-offset-2 ring-indigo-600 focus:ring-2"
               >
                 Create Shipment
               </button>
