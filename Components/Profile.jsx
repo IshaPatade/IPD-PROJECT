@@ -2,17 +2,17 @@ import React,{useEffect,useState} from 'react'
 import image from "next/image"
 
 //INTERNAL IMPORT
-import images from "../Images/index"
+// import images from "../Images/index"
 
 export default ({
   openProfile,
   setOpenProfile,
   currentUser,
-  getShipmentsCount
+  getShipmentCount
 })=>{
   const [count,setCount]=useState();
  useEffect(() => {
-  const getShipmentsdata = getShipmentsCount();
+  const getShipmentsData = getShipmentCount();
   return async()=>{
     const allData = await getShipmentsData;
     setCount(allData);
@@ -31,7 +31,7 @@ export default ({
           </div>
           <div className='max-w-sm mx-auto py-3 space-y-3 text-center'>
             <div className='flex flex-col items-center pb-10'>
-              <Image className=" w-24 h-24 mb-3 rounded-full shadow-lg" src={images.avatar} alt="image"/>
+              <Image className=" w-24 h-24 mb-3 rounded-full shadow-lg" src={image} alt="image"/>
               <h5 className='mb-1 text-xl font-medium text-gray-900 dark:text-white'>welcome Trader</h5>
               <span className='text-sm text-gray-500 dark:text-gray-400'>{currentUser}</span>
               <div className='flex mt-4 space-x-3 md:mt-6'>
