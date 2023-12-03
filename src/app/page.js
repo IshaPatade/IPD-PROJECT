@@ -1,12 +1,22 @@
-// "use client";
+"use client";
 import Image from "next/image";
-import App from "../_app.js";
+// import App from "../_app.js";
+import App from "next/app";
+import Index from "../index";
 
-export default function Home() {
+//INTERMAL import
+import { TrackingProvider } from "../../Context/Tracking";
+import { NavBar, Footer } from "../../Components";
+
+export default function Home({ Component, pageProps }) {
   return (
     <>
-      <p>Hello world!</p>
-      <App />
+      <TrackingProvider>
+        <NavBar />
+        {/* <Component {...pageProps} /> */}
+        <Index />
+      </TrackingProvider>
+      <Footer />
     </>
   );
 }
