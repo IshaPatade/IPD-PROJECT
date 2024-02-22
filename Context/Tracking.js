@@ -5,8 +5,8 @@ import { ethers } from "ethers";
 
 //internal imports
 import tracking from "../Context/Tracking.json";
-const ContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-//0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 my contract deployed to this isha 
+const ContractAddress = "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9";
+//0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 my contract deployed to this isha
 const ContractABI = tracking.abi;
 
 //--fetching smart contract

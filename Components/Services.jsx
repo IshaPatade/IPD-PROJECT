@@ -14,9 +14,9 @@ import { MODAL_CARD_CLASSNAME } from "web3modal";
 
 export default ({
   setOpenProfile,
-  setCompleteModal,
-  setGetModal,
-  setStartModal,
+  setCompleteModel,
+  setGetModel,
+  setStartModel,
 }) => {
   const team = [
     {
@@ -40,11 +40,11 @@ export default ({
   ];
   const openModelBox = (text) => {
     if (text === 1) {
-      setCompleteModal(true);
+      setCompleteModel(true);
     } else if (text === 2) {
-      setGetModal(true);
+      setGetModel(true);
     } else if (text === 3) {
-      setStartModal(true);
+      setStartModel(true);
     } else if (text === 4) {
       setOpenProfile(true);
     }
