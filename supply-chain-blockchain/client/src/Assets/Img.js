@@ -1,0 +1,1 @@
+export const preLoader = "https://res.cloudinary.com/dsq5spft3/image/upload/v1692211945/ProjectX/867_1_q5onab.gif"

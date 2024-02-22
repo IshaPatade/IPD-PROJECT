@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+.stickyy {
+  position: fixed;
+  width: 100%;
+  min-height: 10vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: transparent;
+  background-color: #000;
+  color: #fff;
+  /* background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.375); */
+}
+
+.Nav-bar {
+  width: 95%;
+  margin: auto;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.Nav-logo-div {
+  min-width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+
+.Nav-logo {
+  width: 100%;
+  background-size: cover;
+}
+
+.Nav-ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.Nav-li {
+  list-style: none;
+  text-decoration: none !important;
+  margin: 0;
+  color: gray;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  align-items: start;
+}
+
+.Nav-li:hover {
+  color: white;
+}
+
+.Nav-a {
+  color: var(--black);
+  text-decoration: none !important;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.Nav-bar-icon {
+  display: none;
+  margin-right: 10px;
+  width: 10%;
+  border: 0;
+  border-width: 0;
+  outline: none;
+}
+
+.Nav-Icon-Bar,
+.Nav-Icon-Cross {
+  height: 30px;
+  width: 100%;
+}
+
+@media screen and (max-width: 967px) {
+  .a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Nav-a:hover {
+    color: #fff;
+  }
+
+  .Nav-bar-icon {
+    display: block;
+    width: 10%;
+    justify-content: space-evenly;
+  }
+
+  .Nav-logo-div {
+    width: 40%;
+  }
+
+  .Nav-ul {
+    left: -100%;
+    display: none;
+  }
+
+  .Nav-ul-Active {
+    display: block;
+    flex-direction: column;
+    position: fixed;
+    text-align: center;
+    top: 10vh;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    background-color: var(--primary-color);
+  }
+
+  .Nav-li {
+    margin: 20px;
+  }
+}
