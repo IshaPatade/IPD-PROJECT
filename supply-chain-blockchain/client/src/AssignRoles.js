@@ -187,41 +187,41 @@ function AssignRoles() {
   };
 
   return (
-    <div className="mt-[15vh]">
+    <div className="mt-[15vh] bg-[#D2FAFB] p-4">
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
       <span
         onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
+        className="btn btn-outline-danger btn-sm  m-2"
       >
         HOME
       </span>
       <h4>Raw Material Suppliers:</h4>
       <form onSubmit={handlerSubmitRMS}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-2"
           type="text"
           onChange={handlerChangeAddressRMS}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangeNameRMS}
           placeholder="Raw Material Supplier Name"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangePlaceRMS}
           placeholder="Based In"
           required
         />
         <button
-          className="btn btn-outline-success btn-sm"
+          className="btn btn-outline-success btn-sm m-2"
           onSubmit={handlerSubmitRMS}
         >
           Register
@@ -229,21 +229,21 @@ function AssignRoles() {
       </form>
       <table className="table table-sm">
         <thead>
-          <tr>
+          <tr className="">
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Place</th>
             <th scope="col">Ethereum Address</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="bg-red-500 ml-10">
           {Object.keys(RMS).map(function (key) {
             return (
-              <tr key={key}>
-                <td>{RMS[key].id}</td>
-                <td>{RMS[key].name}</td>
-                <td>{RMS[key].place}</td>
-                <td>{RMS[key].addr}</td>
+              <tr key={key} className="bg-gray-100 pb-10">
+                <td className="">{RMS[key].id}</td>
+                <td className="">{RMS[key].name}</td>
+                <td className="">{RMS[key].place}</td>
+                <td className="border px-4 py-2">{RMS[key].addr}</td>
               </tr>
             );
           })}
@@ -252,28 +252,28 @@ function AssignRoles() {
       <h4>Manufacturers:</h4>
       <form onSubmit={handlerSubmitMAN}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-2"
           type="text"
           onChange={handlerChangeAddressMAN}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangeNameMAN}
           placeholder="Manufacturer Name"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangePlaceMAN}
           placeholder="Based In"
           required
         />
         <button
-          className="btn btn-outline-success btn-sm"
+          className="btn btn-outline-success btn-sm m-2"
           onSubmit={handlerSubmitMAN}
         >
           Register
@@ -304,28 +304,28 @@ function AssignRoles() {
       <h4>Distributors:</h4>
       <form onSubmit={handlerSubmitDIS}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-2"
           type="text"
           onChange={handlerChangeAddressDIS}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangeNameDIS}
           placeholder="Distributor Name"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangePlaceDIS}
           placeholder="Based In"
           required
         />
         <button
-          className="btn btn-outline-success btn-sm"
+          className="btn btn-outline-success btn-sm m-2"
           onSubmit={handlerSubmitDIS}
         >
           Register
@@ -356,28 +356,28 @@ function AssignRoles() {
       <h4>Retailers:</h4>
       <form onSubmit={handlerSubmitRET}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-2"
           type="text"
           onChange={handlerChangeAddressRET}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangeNameRET}
           placeholder="Retailer Name"
           required
         />
         <input
-          className="form-control-sm"
+          className="form-control-sm mr-2"
           type="text"
           onChange={handlerChangePlaceRET}
           placeholder="Based In"
           required
         />
         <button
-          className="btn btn-outline-success btn-sm"
+          className="btn btn-outline-success btn-sm m-2"
           onSubmit={handlerSubmitRET}
         >
           Register

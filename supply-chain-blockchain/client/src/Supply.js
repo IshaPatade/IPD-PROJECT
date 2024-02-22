@@ -62,12 +62,9 @@ function Supply() {
   if (loader) {
     return (
       <div>
-
-      
-      <div className="h-screen flex flex-col justify-center items-center mt-[11vh]">
-        <img src={preLoader} alt="pre-loader" />
-      </div>
-
+        <div className="h-screen flex flex-col justify-center items-center mt-[11vh]">
+          <img src={preLoader} alt="pre-loader" />
+        </div>
       </div>
     );
   }
@@ -189,7 +186,7 @@ function Supply() {
       </h5>
       <form onSubmit={handlerSubmitRMSsupply}>
         <input
-          className="form-control-sm"
+          className="form-control-sm p-4"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
