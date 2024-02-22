@@ -14,7 +14,7 @@ import "./HeroSection.css";
 const HeroSection = () => {
   return (
     <>
-      <section className="bg-[#2C003E]">
+      <section className="">
         <div className="2xl:container mx-auto" style={{ margin: "0px" }}>
           <div className="w-[90%] mx-auto h-screen text-center grid grid-cols-1">
             <div className="flex flex-col justify-center items-center gap-5">

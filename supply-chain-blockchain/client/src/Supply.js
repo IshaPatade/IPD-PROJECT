@@ -140,8 +140,8 @@ function Supply() {
     }
   };
   return (
-    <div className="mt-[11vh]">
-      <span>
+    <div className="mt-[11vh] p-4">
+      <span className="mr-4">
         <b>Current Account Address:</b> {currentaccount}
       </span>
       <span
@@ -158,7 +158,7 @@ function Supply() {
         Medicine Order -&gt; Raw Material Supplier -&gt; Manufacturer -&gt;
         Distributor -&gt; Retailer -&gt; Consumer
       </p>
-      <table className="table table-sm table-dark">
+      <table className="table table-sm ">
         <thead>
           <tr>
             <th scope="col">Medicine ID</th>
@@ -186,16 +186,13 @@ function Supply() {
       </h5>
       <form onSubmit={handlerSubmitRMSsupply}>
         <input
-          className="form-control-sm p-4"
+          className="form-control-sm m-3"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitRMSsupply}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitRMSsupply}>
           Supply
         </button>
       </form>
@@ -207,16 +204,13 @@ function Supply() {
       </h5>
       <form onSubmit={handlerSubmitManufacturing}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-3"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitManufacturing}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitManufacturing}>
           Manufacture
         </button>
       </form>
@@ -228,16 +222,13 @@ function Supply() {
       </h5>
       <form onSubmit={handlerSubmitDistribute}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-3"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitDistribute}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitDistribute}>
           Distribute
         </button>
       </form>
@@ -249,16 +240,13 @@ function Supply() {
       </h5>
       <form onSubmit={handlerSubmitRetail}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-3"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitRetail}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitRetail}>
           Retail
         </button>
       </form>
@@ -270,16 +258,13 @@ function Supply() {
       </h5>
       <form onSubmit={handlerSubmitSold}>
         <input
-          className="form-control-sm"
+          className="form-control-sm m-3"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitSold}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitSold}>
           Sold
         </button>
       </form>

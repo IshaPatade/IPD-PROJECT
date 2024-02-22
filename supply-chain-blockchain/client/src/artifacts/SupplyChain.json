@@ -22072,12 +22072,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x344FfEe2E44f502befe29908601BCd4ec595B131",
-      "transactionHash": "0xfce62304b252a355aa4dfae219f90fc66db1db126d4d5b37d0af3649b32ab181"
+      "address": "0xe952713323D7D88314bB704172111168416c6616",
+      "transactionHash": "0x744cce0eebc0f51451e425636fd2d65e1ce00267e0166b7a2fdc4daac30bc9a6"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-02-22T17:24:26.566Z",
+  "updatedAt": "2024-02-22T18:19:30.839Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

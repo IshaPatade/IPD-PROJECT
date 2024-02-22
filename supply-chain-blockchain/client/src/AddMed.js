@@ -1,4 +1,4 @@
-import "./AddMed.css"
+import "./AddMed.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
@@ -94,16 +94,14 @@ function AddMed() {
     <div className="py-10 mt-[11vh]">
       <div className="container mx-auto">
         <div className="w-[90%] mx-auto">
-          <span >
+          <span>
             <b>Current Account Address:</b> {currentaccount}
           </span>
         </div>
       </div>
 
-
       <br />
       <div className="2xl:container mx-auto py-10 space-y-4">
-
         <div className="w-[90%] mx-auto grid grid-cols-1">
           <h5>Add Medicine Order:</h5>
         </div>
@@ -124,14 +122,10 @@ function AddMed() {
                 placeholder="Medicine Description"
                 required
               />
-              <button
-                className="btn btn-outline-success btn-sm"
-                onSubmit={handlerSubmitMED}
-              >
+              <button className="button-decor" onSubmit={handlerSubmitMED}>
                 Order
               </button>
             </div>
-
           </form>
           <div>
             <h5>Ordered Medicines:</h5>
@@ -159,13 +153,10 @@ function AddMed() {
             </table>
           </div>
         </div>
-
       </div>
 
       <br />
-
     </div>
-
   );
 }
 

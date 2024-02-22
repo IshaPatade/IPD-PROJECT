@@ -187,7 +187,7 @@ function AssignRoles() {
   };
 
   return (
-    <div className="mt-[15vh] bg-[#D2FAFB] p-4">
+    <div className="mt-[15vh] p-4">
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
@@ -198,36 +198,33 @@ function AssignRoles() {
         HOME
       </span>
       <h4>Raw Material Suppliers:</h4>
-      <form onSubmit={handlerSubmitRMS}>
+      <form onSubmit={handlerSubmitRMS} className="mr-10 ml-10 mt-3">
         <input
-          className="form-control-sm m-2"
+          className="form-control-sm border border-2 border-black"
           type="text"
           onChange={handlerChangeAddressRMS}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeNameRMS}
           placeholder="Raw Material Supplier Name"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangePlaceRMS}
           placeholder="Based In"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm m-2"
-          onSubmit={handlerSubmitRMS}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitRMS}>
           Register
         </button>
       </form>
-      <table className="table table-sm">
+      <table className="table table-sm m-5">
         <thead>
           <tr className="">
             <th scope="col">ID</th>
@@ -250,36 +247,33 @@ function AssignRoles() {
         </tbody>
       </table>
       <h4>Manufacturers:</h4>
-      <form onSubmit={handlerSubmitMAN}>
+      <form onSubmit={handlerSubmitMAN} className="mr-10 ml-10 mt-3">
         <input
-          className="form-control-sm m-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeAddressMAN}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeNameMAN}
           placeholder="Manufacturer Name"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangePlaceMAN}
           placeholder="Based In"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm m-2"
-          onSubmit={handlerSubmitMAN}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitMAN}>
           Register
         </button>
       </form>
-      <table className="table table-sm">
+      <table className="table table-sm m-5">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -302,36 +296,33 @@ function AssignRoles() {
         </tbody>
       </table>
       <h4>Distributors:</h4>
-      <form onSubmit={handlerSubmitDIS}>
+      <form onSubmit={handlerSubmitDIS} className="mr-10 ml-10 mt-3 m-5">
         <input
-          className="form-control-sm m-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeAddressDIS}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeNameDIS}
           placeholder="Distributor Name"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangePlaceDIS}
           placeholder="Based In"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm m-2"
-          onSubmit={handlerSubmitDIS}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitDIS}>
           Register
         </button>
       </form>
-      <table className="table table-sm">
+      <table className="table table-sm m-5">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -354,36 +345,33 @@ function AssignRoles() {
         </tbody>
       </table>
       <h4>Retailers:</h4>
-      <form onSubmit={handlerSubmitRET}>
+      <form onSubmit={handlerSubmitRET} className="mr-10 ml-10 mt-3">
         <input
-          className="form-control-sm m-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeAddressRET}
           placeholder="Ethereum Address"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeNameRET}
           placeholder="Retailer Name"
           required
         />
         <input
-          className="form-control-sm mr-2"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangePlaceRET}
           placeholder="Based In"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm m-2"
-          onSubmit={handlerSubmitRET}
-        >
+        <button className="button-decor" onSubmit={handlerSubmitRET}>
           Register
         </button>
       </form>
-      <table className="table table-sm">
+      <table className="table table-sm m-5">
         <thead>
           <tr>
             <th scope="col">ID</th>

@@ -11,6 +11,20 @@
   font-family: 'poppins';
 }
 
+.button-decor{
+  background-color: #643d72;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  padding: 0.6em 0.5em;
+  text-decoration: none;
+  text-transform: uppercase
+}
+
 html {
   /* margin-top: 11vh; */
 }

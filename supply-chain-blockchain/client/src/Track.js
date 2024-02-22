@@ -102,7 +102,7 @@ function Track() {
   }
   if (TrackTillSold) {
     return (
-      <div className="container-xl">
+      <div className="mt-[15vh]">
         <article className="col-4">
           <h3>
             <b>
@@ -209,7 +209,7 @@ function Track() {
           onClick={() => {
             showTrackTillSold(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          className="button-decor"
         >
           Track Another Item
         </button>
@@ -421,7 +421,7 @@ function Track() {
           onClick={() => {
             showTrackTillDistribution(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          className="button-decor"
         >
           Track Another Item
         </button>
@@ -506,11 +506,10 @@ function Track() {
           onClick={() => {
             showTrackTillManufacture(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          className="button-decor"
         >
           Track Another Item
         </button>
-
       </div>
     );
   }
@@ -566,7 +565,7 @@ function Track() {
           onClick={() => {
             showTrackTillRMS(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          className="button-decor"
         >
           Track Another Item
         </button>
@@ -616,11 +615,10 @@ function Track() {
             onClick={() => {
               showTrackTillOrdered(false);
             }}
-            className="btn btn-outline-success btn-sm"
+            className="button-decor"
           >
             Track Another Item
           </button>
-
         </article>
         {/* <section className="row">
                     
@@ -682,10 +680,7 @@ function Track() {
           placeholder="Enter Medicine ID"
           required
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmit}
-        >
+        <button className="button-decor" onSubmit={handlerSubmit}>
           Track
         </button>
       </form>
