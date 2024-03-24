@@ -19,6 +19,7 @@ function Home() {
   return (
     <>
       <section className="">
+        
         <HeroSection/>
         {/* <div className="2xl:container mx-auto py-10" id="Home">
           <div className="w-[90%] mx-auto grid grid-cols-1 place-items-center pb-5">

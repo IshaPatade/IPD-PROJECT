@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // import { logo } from "../../assets/img";
 // import { HashLink as Link } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
-
+import Logout from "../Logout";
 
 let Header = () => {
   let [isMobile, setisMobile] = useState(false);
@@ -80,12 +80,20 @@ let Header = () => {
                 </Link>
               </li>
               <li className="Nav-li" id="1">
-                <Link to="/addmed" className="Nav-a" onClick={() => autoClose()}>
+                <Link
+                  to="/addmed"
+                  className="Nav-a"
+                  onClick={() => autoClose()}
+                >
                   Addmed
                 </Link>
               </li>
               <li className="Nav-li" id="1">
-                <Link to="/supply" className="Nav-a" onClick={() => autoClose()}>
+                <Link
+                  to="/supply"
+                  className="Nav-a"
+                  onClick={() => autoClose()}
+                >
                   Supply
                 </Link>
               </li>
@@ -94,9 +102,11 @@ let Header = () => {
                   Track
                 </Link>
               </li>
+              <li className="Nav-li" id="2">
+                <Logout></Logout>
+              </li>
             </ul>
           </div>
-
 
           <button className="Nav-bar-icon" onClick={() => showSwitch()}>
             {isMobile ? (
