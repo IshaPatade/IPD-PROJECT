@@ -220,7 +220,10 @@ function AssignRoles() {
           placeholder="Based In"
           required
         />
-        <button className="button-decor" onSubmit={handlerSubmitRMS}>
+        <button
+          className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+          onSubmit={handlerSubmitRMS}
+        >
           Register
         </button>
       </form>
@@ -269,7 +272,10 @@ function AssignRoles() {
           placeholder="Based In"
           required
         />
-        <button className="button-decor" onSubmit={handlerSubmitMAN}>
+        <button
+          className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+          onSubmit={handlerSubmitMAN}
+        >
           Register
         </button>
       </form>
@@ -318,7 +324,10 @@ function AssignRoles() {
           placeholder="Based In"
           required
         />
-        <button className="button-decor" onSubmit={handlerSubmitDIS}>
+        <button
+          className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+          onSubmit={handlerSubmitDIS}
+        >
           Register
         </button>
       </form>
@@ -367,7 +376,10 @@ function AssignRoles() {
           placeholder="Based In"
           required
         />
-        <button className="button-decor" onSubmit={handlerSubmitRET}>
+        <button
+          className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+          onSubmit={handlerSubmitRET}
+        >
           Register
         </button>
       </form>

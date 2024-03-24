@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import SupplyChainABI from "./artifacts/SupplyChain.json";
 import { preLoader } from "./Assets/Img";
+import Supplier from "./Components/Roles/Supplier";
+import Manufacturer from "./Components/Roles/Manufacturer";
+import Distributor from "./Components/Roles/Distributor";
+import Retailer from "./Components/Roles/Retailer";
 
 function Supply() {
   const navigate = useNavigate();
@@ -180,95 +184,22 @@ function Supply() {
           })}
         </tbody>
       </table>
-      <h5>
-        <b>Step 1: Supply Raw Materials</b>(Only a registered Raw Material
-        Supplier can perform this step):-
-      </h5>
-      <form onSubmit={handlerSubmitRMSsupply}>
-        <input
-          className="form-control-sm m-3"
-          type="text"
-          onChange={handlerChangeID}
-          placeholder="Enter Medicine ID"
-          required
-        />
-        <button className="button-decor" onSubmit={handlerSubmitRMSsupply}>
-          Supply
-        </button>
-      </form>
-      <hr />
-      <br />
-      <h5>
-        <b>Step 2: Manufacture</b>(Only a registered Manufacturer can perform
-        this step):-
-      </h5>
-      <form onSubmit={handlerSubmitManufacturing}>
-        <input
-          className="form-control-sm m-3"
-          type="text"
-          onChange={handlerChangeID}
-          placeholder="Enter Medicine ID"
-          required
-        />
-        <button className="button-decor" onSubmit={handlerSubmitManufacturing}>
-          Manufacture
-        </button>
-      </form>
-      <hr />
-      <br />
-      <h5>
-        <b>Step 3: Distribute</b>(Only a registered Distributor can perform this
-        step):-
-      </h5>
-      <form onSubmit={handlerSubmitDistribute}>
-        <input
-          className="form-control-sm m-3"
-          type="text"
-          onChange={handlerChangeID}
-          placeholder="Enter Medicine ID"
-          required
-        />
-        <button className="button-decor" onSubmit={handlerSubmitDistribute}>
-          Distribute
-        </button>
-      </form>
-      <hr />
-      <br />
-      <h5>
-        <b>Step 4: Retail</b>(Only a registered Retailer can perform this
-        step):-
-      </h5>
-      <form onSubmit={handlerSubmitRetail}>
-        <input
-          className="form-control-sm m-3"
-          type="text"
-          onChange={handlerChangeID}
-          placeholder="Enter Medicine ID"
-          required
-        />
-        <button className="button-decor" onSubmit={handlerSubmitRetail}>
-          Retail
-        </button>
-      </form>
-      <hr />
-      <br />
-      <h5>
-        <b>Step 5: Mark as sold</b>(Only a registered Retailer can perform this
-        step):-
-      </h5>
-      <form onSubmit={handlerSubmitSold}>
-        <input
-          className="form-control-sm m-3"
-          type="text"
-          onChange={handlerChangeID}
-          placeholder="Enter Medicine ID"
-          required
-        />
-        <button className="button-decor" onSubmit={handlerSubmitSold}>
-          Sold
-        </button>
-      </form>
-      <hr />
+      <Supplier
+        handlerSubmitRMSsupply={handlerSubmitRMSsupply}
+        handlerChangeID={handlerChangeID}
+      />
+      <Manufacturer
+        handlerSubmitManufacturing={handlerSubmitManufacturing}
+        handlerChangeID={handlerChangeID}
+      />
+      <Distributor
+        handlerSubmitDistribute={handlerSubmitDistribute}
+        handlerChangeID={handlerChangeID}
+      />
+      <Retailer
+        handlerSubmitDistribute={handlerSubmitDistribute}
+        handlerChangeID={handlerChangeID}
+      />
     </div>
   );
 }
