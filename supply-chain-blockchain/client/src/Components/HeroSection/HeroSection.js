@@ -1,5 +1,10 @@
 import { HashLink as Link } from "react-router-hash-link";
 import "./HeroSection.css";
+import React, { useState, useEffect } from "react";
+
+
+import { useSignup } from "../../hooks/useSignup";
+import { useLogin } from "../../hooks/useLogin";
 
 {
   /* <section className="py-10">
@@ -12,23 +17,72 @@ import "./HeroSection.css";
 }
 
 const HeroSection = () => {
+
+  const [emailSignIn, setEmailSignIn] = useState();
+  const [passwordSignIn, setPasswordSignIn] = useState();
+
+  const { login, errorLogin, isLoadingLogin } = useLogin();
+    const handleSignin = async (e) => {
+      await login(emailSignIn, passwordSignIn);
+    };
   return (
     <>
       <section className="bg-[#2C003E]">
-        <div className="2xl:container mx-auto" style={{ margin: "0px" }}>
-          <div className="w-[90%] mx-auto h-screen text-center grid grid-cols-1">
+        <div className="2xl:container mx-auto flex " style={{ margin: "0px" }}>
+          <div className="w-[40%] mx-auto h-screen text-center grid grid-cols-1">
             <div className="flex flex-col justify-center items-center gap-5">
               <h1 className="heading text-white">
-                Tracking Pharmaceutical Products using BlockChain
+                Tracking Pharmaceutical Products using Blockchain
               </h1>
 
-              <Link to="#Home">
-                {/* <button className="bg-white text-black font-[poppins] py-3 px-5 rounded-md">
+              {/* <Link to="#Home">
+                <button className="bg-white text-black font-[poppins] py-3 px-5 rounded-md">
                   Get Started
-                </button> */}
-              </Link>
+                </button>
+              </Link> */}
             </div>
-            <div></div>
+          </div>
+          <div className="w-[40%] mx-auto h-screen text-center grid grid-cols-1">
+            <div class="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
+              {/* <header>
+                <img
+                  class="w-20 mx-auto mb-5"
+                  src="https://img.icons8.com/fluent/344/year-of-tiger.png"
+                />
+              </header> */}
+              <form>
+                <div>
+                  <label class="block mb-2 text-purple-500" for="username">
+                    Username
+                  </label>
+                  <input
+                    class="w-full p-2 mb-6 text-purple-700 border-b-2 border-purple-500 outline-none "
+                    type="email"
+                    placeholder="Email"
+                    value={emailSignIn}
+                    onChange={(e) => setEmailSignIn(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label class="block mb-2 text-purple-500" for="password">
+                    Password
+                  </label>
+                  <input
+                    class="w-full p-2 mb-6 text-purple-700 border-b-2 border-purple-500 outline-none "
+                    type="password"
+                    placeholder="Password"
+                    value={passwordSignIn}
+                    onChange={(e) => setPasswordSignIn(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <input
+                    class="w-full bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 mb-6 rounded"
+                    type="submit"
+                  />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>

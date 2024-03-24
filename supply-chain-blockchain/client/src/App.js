@@ -7,8 +7,10 @@ import Track from "./Track";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import HeroSection from "./Components/HeroSection/HeroSection";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
+  const { user } = useAuthContext();
   return (
     <div className="App">
       <Router>
