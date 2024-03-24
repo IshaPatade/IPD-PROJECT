@@ -23,9 +23,9 @@ const HeroSection = () => {
               </h1>
 
               <Link to="#Home">
-                <button className="bg-white text-black font-[poppins] py-3 px-5 rounded-md">
+                {/* <button className="bg-white text-black font-[poppins] py-3 px-5 rounded-md">
                   Get Started
-                </button>
+                </button> */}
               </Link>
             </div>
             <div></div>
