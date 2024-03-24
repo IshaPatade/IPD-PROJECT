@@ -2,7 +2,6 @@ import { HashLink as Link } from "react-router-hash-link";
 import "./HeroSection.css";
 import React, { useState, useEffect } from "react";
 
-
 import { useSignup } from "../../hooks/useSignup";
 import { useLogin } from "../../hooks/useLogin";
 
@@ -17,14 +16,13 @@ import { useLogin } from "../../hooks/useLogin";
 }
 
 const HeroSection = () => {
-
   const [emailSignIn, setEmailSignIn] = useState();
   const [passwordSignIn, setPasswordSignIn] = useState();
 
   const { login, errorLogin, isLoadingLogin } = useLogin();
-    const handleSignin = async (e) => {
-      await login(emailSignIn, passwordSignIn);
-    };
+  const handleSignin = async (e) => {
+    await login(emailSignIn, passwordSignIn);
+  };
   return (
     <>
       <section className="bg-[#2C003E]">
@@ -74,6 +72,18 @@ const HeroSection = () => {
                     value={passwordSignIn}
                     onChange={(e) => setPasswordSignIn(e.target.value)}
                   />
+                </div>
+                <div className="mb-3">
+                  <label class="block mb-2 text-purple-500">Role:</label>
+                  <select
+                    id="role"
+                    name="role"
+                    class="block appearance-none w-full bg-purple-200 border border-gray-200 text-gray-700 py-1 px-1 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  >
+                    <option value="manufacturer">Manufacturer</option>
+                    <option value="distributor">Distributor</option>
+                    <option value="retailer">Retailer</option>
+                  </select>
                 </div>
                 <div>
                   <input
