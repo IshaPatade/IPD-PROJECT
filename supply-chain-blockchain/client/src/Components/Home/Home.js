@@ -20,7 +20,7 @@ function Home() {
     <>
       <section className="py-10">
         <HeroSection/>
-        <div className="2xl:container mx-auto py-10" id="Home">
+        {/* <div className="2xl:container mx-auto py-10" id="Home">
           <div className="w-[90%] mx-auto grid grid-cols-1 place-items-center pb-5">
             <h2 className="text-5xl">PharmaFlow</h2>
           </div>
@@ -286,7 +286,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

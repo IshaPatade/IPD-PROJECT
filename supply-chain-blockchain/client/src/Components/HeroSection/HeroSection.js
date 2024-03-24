@@ -14,7 +14,7 @@ import "./HeroSection.css";
 const HeroSection = () => {
   return (
     <>
-      <section className="">
+      <section className="bg-[#2C003E]">
         <div className="2xl:container mx-auto" style={{ margin: "0px" }}>
           <div className="w-[90%] mx-auto h-screen text-center grid grid-cols-1">
             <div className="flex flex-col justify-center items-center gap-5">
@@ -23,9 +23,9 @@ const HeroSection = () => {
               </h1>
 
               <Link to="#Home">
-                <button className="bg-white text-black font-[poppins] py-3 px-5 rounded-md">
+                {/* <button className="bg-white text-black font-[poppins] py-3 px-5 rounded-md">
                   Get Started
-                </button>
+                </button> */}
               </Link>
             </div>
             <div></div>
