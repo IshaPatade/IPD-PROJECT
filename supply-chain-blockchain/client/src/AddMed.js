@@ -94,7 +94,7 @@ function AddMed() {
     <div className="py-10 mt-[11vh]">
       <div className="container mx-auto">
         <div className="w-[90%] mx-auto">
-          <span>
+          <span className="mr-4 bg-purple-200 h-12  border border-black  inline-flex items-center px-4">
             <b>Current Account Address:</b> {currentaccount}
           </span>
         </div>

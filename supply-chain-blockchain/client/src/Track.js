@@ -658,33 +658,33 @@ function Track() {
   };
 
   return (
-    <div className="mt-[11vh]">
-      <span>
+    <div className="mt-[11vh] p-4">
+      <span className="mr-4 bg-purple-200 h-12  border border-black  inline-flex items-center px-4">
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
+      {/* <span
         onClick={redirect_to_home}
         className="btn btn-outline-danger btn-sm"
       >
         {" "}
         HOME
-      </span>
+      </span> */}
 
       <h5 className="pt-5">Enter Medicine ID to Track it</h5>
 
       <form onSubmit={handlerSubmit} className="py-10">
         <input
-          className="form-control-sm"
+          className="form-control-sm border"
           type="text"
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
         />
-        <button className="button-decor" onSubmit={handlerSubmit}>
+        <button className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 ml-20 rounded" onSubmit={handlerSubmit}>
           Track
         </button>
       </form>
-      <table className="table table-sm table-bordered">
+      <table className="table table-sm table-bordered border">
         <thead>
           <tr>
             <th scope="col">Medicine ID</th>

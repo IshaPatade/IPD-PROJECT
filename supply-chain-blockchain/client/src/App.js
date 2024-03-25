@@ -21,8 +21,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {user ? <Header /> : ""}
-        {user ? console.log("user") : console.log("no usre")}
+         {/* {user ? <Header /> : ""}  */}
+        
         <Routes>
           <Route
             path="/"

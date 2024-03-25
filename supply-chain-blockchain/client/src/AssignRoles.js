@@ -175,7 +175,7 @@ function AssignRoles() {
         .send({ from: currentaccount });
       if (reciept) {
         loadBlockchaindata();
-        console.log("sending request")
+        console.log("sending request");
         await signup(
           MANname,
           MANPassword,
@@ -183,7 +183,7 @@ function AssignRoles() {
           MANaddress,
           "manufacturer"
         );
-         console.log("sent request");
+        console.log("sent request");
       }
     } catch (err) {
       alert("An error occured!!!");
@@ -219,8 +219,8 @@ function AssignRoles() {
   };
 
   return (
-    <div className="mt-[15vh] p-4">
-      <span>
+    <div className="mt-[11vh] p-4">
+      <span className="mr-4 bg-purple-200 h-12  border border-black  inline-flex items-center px-4">
         <b>Current Account Address:</b> {currentaccount}
       </span>
       {/* <span
@@ -229,7 +229,7 @@ function AssignRoles() {
       >
         HOME
       </span> */}
-      <h4>Raw Material Suppliers:</h4>
+      <h4 className="mt-3 ">Raw Material Suppliers:</h4>
       <form onSubmit={handlerSubmitRMS} className="mr-10 ml-10 mt-3">
         <input
           className="form-control-sm mr-2 border border-2 border-black"
@@ -266,7 +266,7 @@ function AssignRoles() {
           Register
         </button>
       </form>
-      <table className="table table-sm m-5">
+      <table className="table table-sm m-3 table-bordered">
         <thead>
           <tr className="">
             <th scope="col">ID</th>
@@ -288,7 +288,7 @@ function AssignRoles() {
           })}
         </tbody>
       </table>
-      <h4>Manufacturers:</h4>
+      <h4 className="">Manufacturers:</h4>
       <form onSubmit={handlerSubmitMAN} className="mr-10 ml-10 mt-3">
         <input
           className="form-control-sm mr-2 border border-2 border-black"
@@ -325,7 +325,7 @@ function AssignRoles() {
           Register
         </button>
       </form>
-      <table className="table table-sm m-5">
+      <table className="table table-sm m-5 table-bordered">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -384,7 +384,7 @@ function AssignRoles() {
           Register
         </button>
       </form>
-      <table className="table table-sm m-5">
+      <table className="table table-sm m-5 table-bordered">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -443,7 +443,7 @@ function AssignRoles() {
           Register
         </button>
       </form>
-      <table className="table table-sm m-5">
+      <table className="table table-sm m-5 table-bordered">
         <thead>
           <tr>
             <th scope="col">ID</th>

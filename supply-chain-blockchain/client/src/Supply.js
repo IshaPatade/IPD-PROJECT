@@ -22,6 +22,9 @@ function Supply() {
   const [MedStage, setMedStage] = useState();
   const [ID, setID] = useState();
 
+  const userString = localStorage.getItem("user");
+  const user = JSON.parse(userString);
+
   const loadWeb3 = async () => {
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
@@ -145,24 +148,24 @@ function Supply() {
   };
   return (
     <div className="mt-[11vh] p-4">
-      <span className="mr-4">
+      <span className="mr-4 bg-purple-200 h-12  border border-black  inline-flex items-center px-4">
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
+      {/* <span
         onClick={redirect_to_home}
         className="btn btn-outline-danger btn-sm"
       >
         {" "}
         HOME
-      </span>
-      <h6>
+      </span> */}
+      <h6 className="mt-3">
         <b>Supply Chain Flow:</b>
       </h6>
       <p>
         Medicine Order -&gt; Raw Material Supplier -&gt; Manufacturer -&gt;
         Distributor -&gt; Retailer -&gt; Consumer
       </p>
-      <table className="table table-sm ">
+      <table className="table table-sm table-bordered ">
         <thead>
           <tr>
             <th scope="col">Medicine ID</th>
@@ -184,22 +187,31 @@ function Supply() {
           })}
         </tbody>
       </table>
-      <Supplier
-        handlerSubmitRMSsupply={handlerSubmitRMSsupply}
-        handlerChangeID={handlerChangeID}
-      />
-      <Manufacturer
-        handlerSubmitManufacturing={handlerSubmitManufacturing}
-        handlerChangeID={handlerChangeID}
-      />
-      <Distributor
-        handlerSubmitDistribute={handlerSubmitDistribute}
-        handlerChangeID={handlerChangeID}
-      />
-      <Retailer
-        handlerSubmitDistribute={handlerSubmitDistribute}
-        handlerChangeID={handlerChangeID}
-      />
+
+      {user.role === "supplier" && (
+        <Supplier
+          handlerSubmitRMSsupply={handlerSubmitRMSsupply}
+          handlerChangeID={handlerChangeID}
+        />
+      )}
+      {user.role === "manufacturer" && (
+        <Manufacturer
+          handlerSubmitManufacturing={handlerSubmitManufacturing}
+          handlerChangeID={handlerChangeID}
+        />
+      )}
+      {user.role === "distributor" && (
+        <Distributor
+          handlerSubmitDistribute={handlerSubmitDistribute}
+          handlerChangeID={handlerChangeID}
+        />
+      )}
+      {user.role === "retailer" && (
+        <Retailer
+          handlerSubmitDistribute={handlerSubmitDistribute}
+          handlerChangeID={handlerChangeID}
+        />
+      )}
     </div>
   );
 }

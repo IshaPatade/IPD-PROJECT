@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 import Logout from "../Logout";
 
 let Header = () => {
+  const userString = localStorage.getItem("user");
+  const user = JSON.parse(userString);
+  const role = user.role;
+  console.log(role);
+
   let [isMobile, setisMobile] = useState(false);
   let [autoClosecomponent, setautoClosecomponent] = useState(false);
   let [isMinWidthReached, setIsMinWidthReached] = useState(
@@ -74,20 +79,28 @@ let Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="Nav-li" id="1">
-                <Link to="/roles" className="Nav-a" onClick={() => autoClose()}>
-                  Roles
-                </Link>
-              </li>
-              <li className="Nav-li" id="1">
-                <Link
-                  to="/addmed"
-                  className="Nav-a"
-                  onClick={() => autoClose()}
-                >
-                  Addmed
-                </Link>
-              </li>
+              {role === "admin" && (
+                <li className="Nav-li" id="1">
+                  <Link
+                    to="/roles"
+                    className="Nav-a"
+                    onClick={() => autoClose()}
+                  >
+                    Roles
+                  </Link>
+                </li>
+              )}
+              {role === "admin" && (
+                <li className="Nav-li" id="1">
+                  <Link
+                    to="/addmed"
+                    className="Nav-a"
+                    onClick={() => autoClose()}
+                  >
+                    Addmed
+                  </Link>
+                </li>
+              )}
               <li className="Nav-li" id="1">
                 <Link
                   to="/supply"
