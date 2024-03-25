@@ -14,15 +14,26 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  username: {
+  // username: {
+  //   type: String,
+  //   required: true,
+  // },
+  location: {
+    type: String,
+  },
+  ethAddress: {
     type: String,
     required: true,
   },
+  role:{
+    type:String,
+    required:true,
+  }
 });
 
-userSchema.statics.signup = async function (email, password, username) {
+userSchema.statics.signup = async function (email, password, location, ethAddress,role) {
   //validation
-  if (!email || !password) {
+  if (!email || !password || !ethAddress|| !role ) {
     throw error("All fields must be filled");
   }
   if (!validator.isEmail(email)) {
@@ -39,13 +50,13 @@ userSchema.statics.signup = async function (email, password, username) {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ email, password: hash, username });
+  const user = await this.create({ email, password: hash, location, ethAddress ,role});
 
   return user;
 };
 
-userSchema.statics.login = async function (email, password) {
-  if (!email || !password) {
+userSchema.statics.login = async function (email, password, role) {
+  if (!email || !password || !role) {
     throw error("All fields must be filled");
   }
 
@@ -57,6 +68,9 @@ userSchema.statics.login = async function (email, password) {
   const match = bcrypt.compare(password, user.password);
   if (!match) {
     throw error("Incorrect password");
+  }
+  if (user.role != role) {
+    throw error("Incorrect role");
   }
 
   return user;

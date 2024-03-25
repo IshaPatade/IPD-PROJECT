@@ -3,6 +3,7 @@ import Web3 from "web3";
 import SupplyChainABI from "./artifacts/SupplyChain.json";
 import { useNavigate } from "react-router-dom";
 import { preLoader } from "./Assets/Img";
+import { useSignup } from "./hooks/useSignup";
 
 function AssignRoles() {
   const navigate = useNavigate();
@@ -17,6 +18,10 @@ function AssignRoles() {
   const [MANname, setMANname] = useState();
   const [DISname, setDISname] = useState();
   const [RETname, setRETname] = useState();
+  const [RMSPassword, setRMSPassword] = useState();
+  const [MANPassword, setMANPassword] = useState();
+  const [DISPassword, setDISPassword] = useState();
+  const [RETPassword, setRETPassword] = useState();
   const [RMSplace, setRMSplace] = useState();
   const [MANplace, setMANplace] = useState();
   const [DISplace, setDISplace] = useState();
@@ -29,6 +34,8 @@ function AssignRoles() {
   const [MAN, setMAN] = useState();
   const [DIS, setDIS] = useState();
   const [RET, setRET] = useState();
+
+  const { signup, error, isLoading } = useSignup();
 
   const loadWeb3 = async () => {
     if (window.ethereum) {
@@ -106,6 +113,9 @@ function AssignRoles() {
   const handlerChangeNameRMS = (event) => {
     setRMSname(event.target.value);
   };
+  const handlerChangePasswordRMS = (event) => {
+    setRMSPassword(event.target.value);
+  };
   const handlerChangeAddressMAN = (event) => {
     setMANaddress(event.target.value);
   };
@@ -114,6 +124,9 @@ function AssignRoles() {
   };
   const handlerChangeNameMAN = (event) => {
     setMANname(event.target.value);
+  };
+  const handlerChangePasswordMAN = (event) => {
+    setMANPassword(event.target.value);
   };
   const handlerChangeAddressDIS = (event) => {
     setDISaddress(event.target.value);
@@ -124,6 +137,9 @@ function AssignRoles() {
   const handlerChangeNameDIS = (event) => {
     setDISname(event.target.value);
   };
+  const handlerChangePasswordDIS = (event) => {
+    setDISPassword(event.target.value);
+  };
   const handlerChangeAddressRET = (event) => {
     setRETaddress(event.target.value);
   };
@@ -133,6 +149,9 @@ function AssignRoles() {
   const handlerChangeNameRET = (event) => {
     setRETname(event.target.value);
   };
+  const handlerChangePasswordRET = (event) => {
+    setRETPassword(event.target.value);
+  };
   const handlerSubmitRMS = async (event) => {
     event.preventDefault();
     try {
@@ -141,6 +160,8 @@ function AssignRoles() {
         .send({ from: currentaccount });
       if (reciept) {
         loadBlockchaindata();
+
+        await signup(RMSname, RMSPassword, RMSplace, RMSaddress, "supplier");
       }
     } catch (err) {
       alert("An error occured!!!");
@@ -154,6 +175,15 @@ function AssignRoles() {
         .send({ from: currentaccount });
       if (reciept) {
         loadBlockchaindata();
+        console.log("sending request")
+        await signup(
+          MANname,
+          MANPassword,
+          MANplace,
+          MANaddress,
+          "manufacturer"
+        );
+         console.log("sent request");
       }
     } catch (err) {
       alert("An error occured!!!");
@@ -167,6 +197,7 @@ function AssignRoles() {
         .send({ from: currentaccount });
       if (reciept) {
         loadBlockchaindata();
+        await signup(DISname, DISPassword, DISplace, DISaddress, "distributor");
       }
     } catch (err) {
       alert("An error occured!!!");
@@ -180,6 +211,7 @@ function AssignRoles() {
         .send({ from: currentaccount });
       if (reciept) {
         loadBlockchaindata();
+        await signup(RETname, RETPassword, RETplace, RETaddress, "retailer");
       }
     } catch (err) {
       alert("An error occured!!!");
@@ -191,16 +223,16 @@ function AssignRoles() {
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
+      {/* <span
         onClick={redirect_to_home}
         className="btn btn-outline-danger btn-sm  m-2"
       >
         HOME
-      </span>
+      </span> */}
       <h4>Raw Material Suppliers:</h4>
       <form onSubmit={handlerSubmitRMS} className="mr-10 ml-10 mt-3">
         <input
-          className="form-control-sm border border-2 border-black"
+          className="form-control-sm mr-2 border border-2 border-black"
           type="text"
           onChange={handlerChangeAddressRMS}
           placeholder="Ethereum Address"
@@ -208,9 +240,16 @@ function AssignRoles() {
         />
         <input
           className="form-control-sm mr-2 border border-2 border-black"
-          type="text"
+          type="email"
           onChange={handlerChangeNameRMS}
-          placeholder="Raw Material Supplier Name"
+          placeholder="Raw Material Supplier Email"
+          required
+        />
+        <input
+          className="form-control-sm mr-2 border border-2 border-black"
+          type="text"
+          onChange={handlerChangePasswordRMS}
+          placeholder="Password"
           required
         />
         <input
@@ -260,9 +299,16 @@ function AssignRoles() {
         />
         <input
           className="form-control-sm mr-2 border border-2 border-black"
-          type="text"
+          type="email"
           onChange={handlerChangeNameMAN}
-          placeholder="Manufacturer Name"
+          placeholder="Manufacturer Email"
+          required
+        />
+        <input
+          className="form-control-sm mr-2 border border-2 border-black"
+          type="text"
+          onChange={handlerChangePasswordMAN}
+          placeholder="Password"
           required
         />
         <input
@@ -312,9 +358,16 @@ function AssignRoles() {
         />
         <input
           className="form-control-sm mr-2 border border-2 border-black"
-          type="text"
+          type="email"
           onChange={handlerChangeNameDIS}
-          placeholder="Distributor Name"
+          placeholder="Distributor Email"
+          required
+        />
+        <input
+          className="form-control-sm mr-2 border border-2 border-black"
+          type="text"
+          onChange={handlerChangePasswordDIS}
+          placeholder="Password"
           required
         />
         <input
@@ -364,9 +417,16 @@ function AssignRoles() {
         />
         <input
           className="form-control-sm mr-2 border border-2 border-black"
-          type="text"
+          type="email"
           onChange={handlerChangeNameRET}
-          placeholder="Retailer Name"
+          placeholder="Retailer Email"
+          required
+        />
+        <input
+          className="form-control-sm mr-2 border border-2 border-black"
+          type="text"
+          onChange={handlerChangePasswordRET}
+          placeholder="Password"
           required
         />
         <input

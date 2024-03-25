@@ -8,9 +8,9 @@ const createToken = (_id) => {
 //login
 
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password,role } = req.body;
   try {
-    const user = await User.login(email, password);
+    const user = await User.login(email, password,role);
     const token = createToken(user._id);
     res.status(200).json({ email, token });
   } catch (error) {
@@ -21,9 +21,9 @@ const loginUser = async (req, res) => {
 //signup
 
 const signupUser = async (req, res) => {
-  const { email, password, username } = req.body;
+  const { email, password, location, ethAddress, role } = req.body;
   try {
-    const user = await User.signup(email, password, username);
+    const user = await User.signup(email, password, location, ethAddress, role);
     const token = createToken(user._id);
     res.status(200).json({ email, token });
   } catch (error) {

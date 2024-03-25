@@ -53,7 +53,7 @@
   "sourceMap": "69:367:0:-;;;117:10;94:33;;;;;;;;;;;;;;;;;;;;69:367;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:367:0;;;;;;;",
   "deployedSourceMap": "69:367:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:367:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;132:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;94:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;328:105;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;328:105:0;;;;;;;;;;;;;;;;;:::i;:::-;;132:36;;;;:::o;94:33::-;;;;;;;;;;;;;:::o;328:105::-;234:5;;;;;;;;;;;220:19;;:10;:19;;;204:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;418:9;391:24;:36;;;;328:105;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract Migrations {\r\n  address public owner = msg.sender;\r\n  uint public last_completed_migration;\r\n\r\n  modifier restricted() {\r\n    require(\r\n      msg.sender == owner,\r\n      \"This function is restricted to the contract's owner\"\r\n    );\r\n    _;\r\n  }\r\n\r\n  function setCompleted(uint completed) public restricted {\r\n    last_completed_migration = completed;\r\n  }\r\n}\r\n",
-  "sourcePath": "C:\\Vk coding stufff\\New folder\\supply-chain-blockchain\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\Isha\\Desktop\\webDevelopment\\ipdproject\\supply-chain-blockchain\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -915,13 +915,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x027AD09a06836Ea3eEb47cC6F6F23D690F0FF2dD",
-      "transactionHash": "0x655e44b75877103c2aac57e6f699788bdb365c988eb73a0d9774ee05d27f2654"
+      "address": "0x977b1FDfC893300D892C3a8e66F77f999AF7c77d",
+      "transactionHash": "0xbe7d9830f9178bffbe7ce414061003ce87f82d1d3b93f80e3739f56211901936"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-03-24T16:26:54.302Z",
-  "networkType": "ethereum",
+  "updatedAt": "2024-03-25T13:32:34.507Z",
   "devdoc": {
     "methods": {}
   },
